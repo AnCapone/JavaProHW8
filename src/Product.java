@@ -4,7 +4,7 @@ import java.util.Date;
 public class Product {
     private String type;
     private double price;
-    private boolean isDiscounted = false;
+    private boolean isDiscounted;
     LocalDate dateAdded = LocalDate.now();
 
     public Product(String type, double price) {
