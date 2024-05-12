@@ -7,18 +7,10 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        String productType = "Book";
-        Double limitPrice = 75.0;
-        Double discount = 0.9;
+        List<Product> products = List.of(
+                new Product("Book", 100, true, LocalDate.of(2021, 1, 1)));
 
-        List<Product> products= List.of(
-            new Product("Vegetables", 100),
-            new Product("Book", 70, true, LocalDate.of(2021, 1, 1)),
-            new Product("Book", 5.80, LocalDate.of(2024, 3, 1)),
-            new Product("Toy", 0.50, LocalDate.of(2023, 5, 20)),
-            new Product("Book", 275, true, LocalDate.of(2022, 10, 5)),
-            new Product("Book", 60, true, LocalDate.of(2024, 3, 30))
-        );
+
 
         List<Product> books = products.stream()
                 .filter(product -> product.getType().equals(productType) && product.getPrice() > limitPrice)
