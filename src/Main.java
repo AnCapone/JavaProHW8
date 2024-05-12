@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
@@ -44,6 +45,13 @@ public class Main {
                 .filter(product -> product.getPrice() <= limitPrice)
                 .mapToDouble(Product::getPrice)
                 .sum();
+
+        products.stream()
+                .collect(Collectors.groupingBy(Product::getType))
+                .forEach((key, value) -> System.out.println(key + " : " + value));
+
+
     }
+
 
 }
