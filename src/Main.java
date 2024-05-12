@@ -7,9 +7,6 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        List<Product> products = List.of(
-                new Product("Book", 100, true, LocalDate.of(2021, 1, 1)));
-
 
 
         List<Product> books = products.stream()
